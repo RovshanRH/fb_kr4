@@ -91,18 +91,18 @@ app.patch('/api/users/:id', async (req, res) => {
 app.delete('/api/users/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        
+
         // Проверка на валидное число
         if (isNaN(id)) {
             return res.status(400).json({ error: 'ID must be a number' });
         }
-        
+
         const user = await User.findOneAndDelete({ ID: id });
-        
+
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
-        
+
         res.json({ message: 'User deleted successfully', user });
     } catch (err) {
         res.status(400).json({ error: err.message });
