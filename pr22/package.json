@@ -1,0 +1,15 @@
+{
+  "name": "pr22-load-balancing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практика 22: балансировка нагрузки с Nginx и HAProxy",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
